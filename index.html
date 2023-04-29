@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Roulette</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- <h1>Rulet</h1>
+    <p>Rulet Oyunu</p>
+    <ul>
+      <li>1 den 36 ya kadar rakamlar</li>
+      <li>her rakamın bir rengi var</li>
+      <li>her rakamın tek çift özelliği var</li>
+      <li>her rakamın kulvarı var. (column ve 1st12 vs)</li>
+      <li>her rakamın 1den 18 e veya 19 dan 36 ya özelliği var</li>
+      <li>sıfır var</li>
+      <li>sayı math randomdan değil görüntüden okunacak</li>
+    </ul> -->
+    <div class="header">
+      <h1>Ocakbatıranoğlu Gambling</h1>
+      <div class="hamburger"><p>About</p></div>
+    </div>
+    <div class="result-container">
+      <div class="result"><h2 class="show-result">Result</h2></div>
+      <div class="bank">
+        <p>Bank: ₺ <span class="account">100</span></p>
+      </div>
+      <div class="bank">
+        <span class="times">X 1</span>
+        <img class="chip-times" src="/chip.png" alt="chip" />
+      </div>
+    </div>
+    <div class="roulette">
+      <div class="wheel-container">
+        <div class="wheel-center">
+          <div class="outer-hub"><div class="hub"></div></div>
+        </div>
+        <div class="ball-wheel"><div class="ball"></div></div>
+        <div class="wheel">
+          <div class="number" style="--i: 0; --clr: #00ff00">
+            <span>0</span>
+          </div>
+          <div class="number" style="--i: 1; --clr: #ff0000">
+            <span>32</span>
+          </div>
+          <div class="number" style="--i: 2; --clr: #000000">
+            <span>15</span>
+          </div>
+          <div class="number" style="--i: 3; --clr: #ff0000">
+            <span>19</span>
+          </div>
+          <div class="number" style="--i: 4; --clr: #000000">
+            <span>4</span>
+          </div>
+          <div class="number" style="--i: 5; --clr: #ff0000">
+            <span>21</span>
+          </div>
+          <div class="number" style="--i: 6; --clr: #000000">
+            <span>2</span>
+          </div>
+          <div class="number" style="--i: 7; --clr: #ff0000">
+            <span>25</span>
+          </div>
+          <div class="number" style="--i: 8; --clr: #000000">
+            <span>17</span>
+          </div>
+          <div class="number" style="--i: 9; --clr: #ff0000">
+            <span>34</span>
+          </div>
+          <div class="number" style="--i: 10; --clr: #000000">
+            <span>6</span>
+          </div>
+          <div class="number" style="--i: 11; --clr: #ff0000">
+            <span>27</span>
+          </div>
+          <div class="number" style="--i: 12; --clr: #000000">
+            <span>13</span>
+          </div>
+          <div class="number" style="--i: 13; --clr: #ff0000">
+            <span>36</span>
+          </div>
+          <div class="number" style="--i: 14; --clr: #000000">
+            <span>11</span>
+          </div>
+          <div class="number" style="--i: 15; --clr: #ff0000">
+            <span>30</span>
+          </div>
+          <div class="number" style="--i: 16; --clr: #000000">
+            <span>8</span>
+          </div>
+          <div class="number" style="--i: 17; --clr: #ff0000">
+            <span>23</span>
+          </div>
+          <div class="number" style="--i: 18; --clr: #000000">
+            <span>10</span>
+          </div>
+          <div class="number" style="--i: 19; --clr: #ff0000">
+            <span>5</span>
+          </div>
+          <div class="number" style="--i: 20; --clr: #000000">
+            <span>24</span>
+          </div>
+          <div class="number" style="--i: 21; --clr: #ff0000">
+            <span>16</span>
+          </div>
+          <div class="number" style="--i: 22; --clr: #000000">
+            <span>33</span>
+          </div>
+          <div class="number" style="--i: 23; --clr: #ff0000">
+            <span>1</span>
+          </div>
+          <div class="number" style="--i: 24; --clr: #000000">
+            <span>20</span>
+          </div>
+          <div class="number" style="--i: 25; --clr: #ff0000">
+            <span>14</span>
+          </div>
+          <div class="number" style="--i: 26; --clr: #000000">
+            <span>31</span>
+          </div>
+          <div class="number" style="--i: 27; --clr: #ff0000">
+            <span>9</span>
+          </div>
+          <div class="number" style="--i: 28; --clr: #000000">
+            <span>22</span>
+          </div>
+          <div class="number" style="--i: 29; --clr: #ff0000">
+            <span>18</span>
+          </div>
+          <div class="number" style="--i: 30; --clr: #000000">
+            <span>29</span>
+          </div>
+          <div class="number" style="--i: 31; --clr: #ff0000">
+            <span>7</span>
+          </div>
+          <div class="number" style="--i: 32; --clr: #000000">
+            <span>28</span>
+          </div>
+          <div class="number" style="--i: 33; --clr: #ff0000">
+            <span>12</span>
+          </div>
+          <div class="number" style="--i: 34; --clr: #000000">
+            <span>35</span>
+          </div>
+          <div class="number" style="--i: 35; --clr: #ff0000">
+            <span>3</span>
+          </div>
+          <div class="number" style="--i: 36; --clr: #000000">
+            <span>26</span>
+          </div>
+        </div>
+      </div>
+      <div class="middle-container">
+        <div class="play"><i class="fa-solid fa-play"></i></div>
+        <div class="reset"><i class="fa-solid fa-arrow-rotate-left"></i></div>
+      </div>
+      <div class="bet-table-container">
+        <div class="side-bet-container">
+          <div class="side-bet-column">
+            <div class="table-number side-bet" style="--clr: #ff0000">
+              <span class="bet"></span>
+              <img class="chip" src="/chip.png" alt="chip" />
+              <p>1-18</p>
+            </div>
+            <div class="table-number side-bet" style="--clr: #ff0000">
+              <span class="bet"></span>
+              <img class="chip" src="/chip.png" alt="chip" />
+              <p>EVEN</p>
+            </div>
+            <div class="table-number side-bet" style="--clr: #ff0000">
+              <span class="bet"></span>
+              <img class="chip" src="/chip.png" alt="chip" />
+              <p>RED</p>
+            </div>
+            <div class="table-number side-bet" style="--clr: #ff0000">
+              <span class="bet"></span>
+              <img class="chip" src="/chip.png" alt="chip" />
+              <p>BLACK</p>
+            </div>
+            <div class="table-number side-bet" style="--clr: #ff0000">
+              <span class="bet"></span>
+              <img class="chip" src="/chip.png" alt="chip" />
+              <p>ODD</p>
+            </div>
+            <div class="table-number side-bet" style="--clr: #ff0000">
+              <span class="bet"></span>
+              <img class="chip" src="/chip.png" alt="chip" />
+              <p>19-36</p>
+            </div>
+          </div>
+          <div class="side-bet-column">
+            <div class="table-number twelve" style="--clr: #ff0000">
+              <span class="bet"></span>
+              <img class="chip" src="/chip.png" alt="chip" />
+              <p>1 to 12</p>
+            </div>
+            <div class="table-number twelve" style="--clr: #ff0000">
+              <span class="bet"></span>
+              <img class="chip" src="/chip.png" alt="chip" />
+              <p>13 to 24</p>
+            </div>
+            <div class="table-number twelve" style="--clr: #ff0000">
+              <span class="bet"></span>
+              <img class="chip" src="/chip.png" alt="chip" />
+              <p>25 to 36</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="table-number-container">
+          <div class="table-number zero" style="--clr: #ff0000">
+            <span class="bet"></span>
+            <img class="chip" src="/chip.png" alt="chip" />
+            <p>0</p>
+          </div>
+
+          <div class="table-number" style="--clr: #ff0000">
+            <span class="bet"></span>
+            <img class="chip" src="/chip.png" alt="chip" />
+            <p>1</p>
+          </div>
+          <div class="table-number" style="--clr: #000000">
+            <span class="bet"></span>
+            <img class="chip" src="/chip.png" alt="chip" />
+            <p>2</p>
+          </div>
+          <div class="table-number" style="--clr: #ff0000">
+            <span class="bet"></span>
+            <img class="chip" src="/chip.png" alt="chip" />
+            <p>3</p>
+          </div>
+          <div class="table-number" style="--clr: #000000">
+            <span class="bet"></span>
+            <img class="chip" src="/chip.png" alt="chip" />
+            <p>4</p>
+          </div>
+          <div class="table-number" style="--clr: #ff0000">
+            <span class="bet"></span>
+            <img class="chip" src="/chip.png" alt="chip" />
+            <p>5</p>
+          </div>
+          <div class="table-number" style="--clr: #000000">
+            <span class="bet"></span>
+            <img class="chip" src="/chip.png" alt="chip" />
+            <p>6</p>
+          </div>
+          <div class="table-number" style="--clr: #ff0000">
+            <span class="bet"></span>
+            <img class="chip" src="/chip.png" alt="chip" />
+            <p>7</p>
+          </div>
+          <div class="table-number" style="--clr: #000000">
+            <span class="bet"></span>
+            <img class="chip" src="/chip.png" alt="chip" />
+            <p>8</p>
+          </div>
+          <div class="table-number" style="--clr: #ff0000">
+            <span class="bet"></span>
+            <img class="chip" src="/chip.png" alt="chip" />
+            <p>9</p>
+          </div>
+          <div class="table-number" style="--clr: #000000">
+            <span class="bet"></span>
+            <img class="chip" src="/chip.png" alt="chip" />
+            <p>10</p>
+          </div>
+          <div class="table-number" style="--clr: #000000">
+            <span class="bet"></span>
+            <img class="chip" src="/chip.png" alt="chip" />
+            <p>11</p>
+          </div>
+          <div class="table-number" style="--clr: #ff0000">
+            <span class="bet"></span>
+            <img class="chip" src="/chip.png" alt="chip" />
+            <p>12</p>
+          </div>
+          <div class="table-number" style="--clr: #000000">
+            <span class="bet"></span>
+            <img class="chip" src="/chip.png" alt="chip" />
+            <p>13</p>
+          </div>
+          <div class="table-number" style="--clr: #ff0000">
+            <span class="bet"></span>
+            <img class="chip" src="/chip.png" alt="chip" />
+            <p>14</p>
+          </div>
+          <div class="table-number" style="--clr: #000000">
+            <span class="bet"></span>
+            <img class="chip" src="/chip.png" alt="chip" />
+            <p>15</p>
+          </div>
+          <div class="table-number" style="--clr: #ff0000">
+            <span class="bet"></span>
+            <img class="chip" src="/chip.png" alt="chip" />
+            <p>16</p>
+          </div>
+          <div class="table-number" style="--clr: #000000">
+            <span class="bet"></span>
+            <img class="chip" src="/chip.png" alt="chip" />
+            <p>17</p>
+          </div>
+          <div class="table-number" style="--clr: #ff0000">
+            <span class="bet"></span>
+            <img class="chip" src="/chip.png" alt="chip" />
+            <p>18</p>
+          </div>
+          <div class="table-number" style="--clr: #ff0000">
+            <span class="bet"></span>
+            <img class="chip" src="/chip.png" alt="chip" />
+            <p>19</p>
+          </div>
+          <div class="table-number" style="--clr: #000000">
+            <span class="bet"></span>
+            <img class="chip" src="/chip.png" alt="chip" />
+            <p>20</p>
+          </div>
+          <div class="table-number" style="--clr: #ff0000">
+            <span class="bet"></span>
+            <img class="chip" src="/chip.png" alt="chip" />
+            <p>21</p>
+          </div>
+          <div class="table-number" style="--clr: #000000">
+            <span class="bet"></span>
+            <img class="chip" src="/chip.png" alt="chip" />
+            <p>22</p>
+          </div>
+          <div class="table-number" style="--clr: #ff0000">
+            <span class="bet"></span>
+            <img class="chip" src="/chip.png" alt="chip" />
+            <p>23</p>
+          </div>
+          <div class="table-number" style="--clr: #000000">
+            <span class="bet"></span>
+            <img class="chip" src="/chip.png" alt="chip" />
+            <p>24</p>
+          </div>
+          <div class="table-number" style="--clr: #ff0000">
+            <span class="bet"></span>
+            <img class="chip" src="/chip.png" alt="chip" />
+            <p>25</p>
+          </div>
+          <div class="table-number" style="--clr: #000000">
+            <span class="bet"></span>
+            <img class="chip" src="/chip.png" alt="chip" />
+            <p>26</p>
+          </div>
+          <div class="table-number" style="--clr: #ff0000">
+            <span class="bet"></span>
+            <img class="chip" src="/chip.png" alt="chip" />
+            <p>27</p>
+          </div>
+          <div class="table-number" style="--clr: #ff0000">
+            <span class="bet"></span>
+            <img class="chip" src="/chip.png" alt="chip" />
+            <p>28</p>
+          </div>
+          <div class="table-number" style="--clr: #000000">
+            <span class="bet"></span>
+            <img class="chip" src="/chip.png" alt="chip" />
+            <p>29</p>
+          </div>
+          <div class="table-number" style="--clr: #ff0000">
+            <span class="bet"></span>
+            <img class="chip" src="/chip.png" alt="chip" />
+            <p>30</p>
+          </div>
+          <div class="table-number" style="--clr: #000000">
+            <span class="bet"></span>
+            <img class="chip" src="/chip.png" alt="chip" />
+            <p>31</p>
+          </div>
+          <div class="table-number" style="--clr: #ff0000">
+            <span class="bet"></span>
+            <img class="chip" src="/chip.png" alt="chip" />
+            <p>32</p>
+          </div>
+          <div class="table-number" style="--clr: #000000">
+            <span class="bet"></span>
+            <img class="chip" src="/chip.png" alt="chip" />
+            <p>33</p>
+          </div>
+          <div class="table-number" style="--clr: #ff0000">
+            <span class="bet"></span>
+            <img class="chip" src="/chip.png" alt="chip" />
+            <p>34</p>
+          </div>
+          <div class="table-number" style="--clr: #000000">
+            <span class="bet"></span>
+            <img class="chip" src="/chip.png" alt="chip" />
+            <p>35</p>
+          </div>
+          <div class="table-number" style="--clr: #ff0000">
+            <span class="bet"></span>
+            <img class="chip" src="/chip.png" alt="chip" />
+            <p>36</p>
+          </div>
+          <div class="table-number" style="--clr: #2c8257">
+            <span class="bet"></span>
+            <img class="chip" src="/chip.png" alt="chip" />
+            <p>Col. 1</p>
+          </div>
+          <div class="table-number" style="--clr: #2c8257">
+            <span class="bet"></span>
+            <img class="chip" src="/chip.png" alt="chip" />
+            <p>Col. 2</p>
+          </div>
+          <div class="table-number" style="--clr: #2c8257">
+            <span class="bet"></span>
+            <img class="chip" src="/chip.png" alt="chip" />
+            <p>Col. 3</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="about">
+      <div class="close">
+        <i class="fa-solid fa-xmark"></i>
+      </div>
+    <div class="list-about">
+      <ul>
+        <li>this is a roulette</li>
+        <li>vs</li>
+        <li>vs</li>
+      </ul>
+    </div>
+    </div>
+    <footer>
+      <p>Yunus Emre Yılmaz : </p>
+      <a href="https://www.linkedin.com/in/yunus-emre-y%C4%B1lmaz-a7136b242/"><i class="fa-brands fa-linkedin"></i></a>
+      <a href="https://github.com/yunusemre347"><i class="fa-brands fa-github"></i></a>
+    </footer>
+  </body>
+  <script src="script.js"></script>
+</html>
