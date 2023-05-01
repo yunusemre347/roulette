@@ -1,3 +1,4 @@
-Roulette game is made with vanilla js.
+Roulette game made with vanilla js.
 
-This project will be deployed soon.
+This app is not responsive to mobile devices:
+https://elegant-platypus-c375cf.netlify.app/
