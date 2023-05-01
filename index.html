@@ -15,25 +15,34 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- <h1>Rulet</h1>
-    <p>Rulet Oyunu</p>
-    <ul>
-      <li>1 den 36 ya kadar rakamlar</li>
-      <li>her rakamın bir rengi var</li>
-      <li>her rakamın tek çift özelliği var</li>
-      <li>her rakamın kulvarı var. (column ve 1st12 vs)</li>
-      <li>her rakamın 1den 18 e veya 19 dan 36 ya özelliği var</li>
-      <li>sıfır var</li>
-      <li>sayı math randomdan değil görüntüden okunacak</li>
-    </ul> -->
+    <canvas class="confetti" id="canvas"></canvas>
     <div class="header">
       <h1>Ocakbatıranoğlu Gambling</h1>
       <div class="hamburger"><p>About</p></div>
     </div>
+    <div class="personal-links">
+      <h3>Kaybettiniz!</h3>
+      <p>Paranız: 0₺</p>
+      <p>100₺ kazanmak için sizi aşağıdaki linklerden birine alalım.</p>
+      <div>
+        <a
+          target="_blank"
+          id="loser-link-lin"
+          href="https://www.linkedin.com/in/yunus-emre-y%C4%B1lmaz-a7136b242/"
+          ><i class="fa-brands fa-linkedin"></i
+        ></a>
+        <a
+          target="_blank"
+          id="loser-link-gh"
+          href="https://github.com/yunusemre347"
+          ><i class="fa-brands fa-github"></i
+        ></a>
+      </div>
+    </div>
     <div class="result-container">
       <div class="result"><h2 class="show-result">Result</h2></div>
       <div class="bank">
-        <p>Bank: ₺ <span class="account">100</span></p>
+        <p>Bank: ₺ <span class="account"> </span></p>
       </div>
       <div class="bank">
         <span class="times">X 1</span>
@@ -161,18 +170,21 @@
         </div>
       </div>
       <div class="middle-container">
-        <div class="play"><i class="fa-solid fa-play"></i></div>
+        <div class="play">
+          <span class="countdown">15</span>
+          <i class="fa-solid fa-play" id="playSign"></i>
+        </div>
         <div class="reset"><i class="fa-solid fa-arrow-rotate-left"></i></div>
       </div>
       <div class="bet-table-container">
         <div class="side-bet-container">
           <div class="side-bet-column">
-            <div class="table-number side-bet" style="--clr: #ff0000">
+            <div class="table-number side-bet" style="--clr: #2c8257">
               <span class="bet"></span>
               <img class="chip" src="/chip.png" alt="chip" />
               <p>1-18</p>
             </div>
-            <div class="table-number side-bet" style="--clr: #ff0000">
+            <div class="table-number side-bet" style="--clr: #2c8257">
               <span class="bet"></span>
               <img class="chip" src="/chip.png" alt="chip" />
               <p>EVEN</p>
@@ -182,17 +194,17 @@
               <img class="chip" src="/chip.png" alt="chip" />
               <p>RED</p>
             </div>
-            <div class="table-number side-bet" style="--clr: #ff0000">
+            <div class="table-number side-bet" style="--clr: #000000">
               <span class="bet"></span>
               <img class="chip" src="/chip.png" alt="chip" />
               <p>BLACK</p>
             </div>
-            <div class="table-number side-bet" style="--clr: #ff0000">
+            <div class="table-number side-bet" style="--clr: #2c8257">
               <span class="bet"></span>
               <img class="chip" src="/chip.png" alt="chip" />
               <p>ODD</p>
             </div>
-            <div class="table-number side-bet" style="--clr: #ff0000">
+            <div class="table-number side-bet" style="--clr: #2c8257">
               <span class="bet"></span>
               <img class="chip" src="/chip.png" alt="chip" />
               <p>19-36</p>
@@ -426,19 +438,24 @@
       <div class="close">
         <i class="fa-solid fa-xmark"></i>
       </div>
-    <div class="list-about">
-      <ul>
-        <li>this is a roulette</li>
-        <li>vs</li>
-        <li>vs</li>
-      </ul>
-    </div>
+      <div class="list-about">
+        <h3>Rules</h3>
+        <ul>
+          <li>You can't place bets at last 3 seconds</li>
+          <li>If you reset or refresh before the wheel stops you don't get the award</li>
+        </ul>
+      </div>
     </div>
     <footer>
-      <p>Yunus Emre Yılmaz : </p>
-      <a href="https://www.linkedin.com/in/yunus-emre-y%C4%B1lmaz-a7136b242/"><i class="fa-brands fa-linkedin"></i></a>
-      <a href="https://github.com/yunusemre347"><i class="fa-brands fa-github"></i></a>
+      <p>Yunus Emre Yılmaz :</p>
+      <a href="https://www.linkedin.com/in/yunus-emre-y%C4%B1lmaz-a7136b242/"
+        ><i class="fa-brands fa-linkedin"></i
+      ></a>
+      <a href="https://github.com/yunusemre347"
+        ><i class="fa-brands fa-github"></i
+      ></a>
     </footer>
+    <script src="script.js"></script>
   </body>
-  <script src="script.js"></script>
+
 </html>

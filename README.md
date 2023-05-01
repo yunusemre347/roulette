@@ -1,3 +1,3 @@
-Roulette game made with vanilla js.
+Roulette game is made with vanilla js.
 
 This project will be deployed soon.
